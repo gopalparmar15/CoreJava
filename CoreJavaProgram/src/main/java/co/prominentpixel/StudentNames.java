@@ -1,11 +1,11 @@
 package co.prominentpixel;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CountCollage {
+public class StudentNames {
     public static void main(String[] args) {
         Student s1=new Student(1,"gopal","gardi","First Class");
         Student s2=new Student(2,"abhay","gardi","Second Class");
@@ -18,18 +18,19 @@ public class CountCollage {
         document.add(s3);
         document.add(s4);
         document.add(s5);
+        Map<String, List<String>> studentName = new LinkedHashMap<>();
 
-        Map<String, Integer> map = new HashMap<>();
-            for (Student student : document) {
-                if (map.containsKey(student.getCollege())) {
-                    int num = map.get(student.getCollege());
-                       map.replace(student.getCollege(), ++num);
-                } else {
-                    map.put(student.getCollege(), 1);
-                }
-
+        for (Student student : document) {
+            if (studentName.containsKey(student.getCollege())) {
+                List<String> names = studentName.get(student.getCollege());
+                names.add(student.getName());
             }
-        System.out.println(map);
+            else {
+                List<String> studentNames = new ArrayList<>();
+                studentNames.add(student.getName());
+                studentName.put(student.getCollege(), studentNames);
+            }
         }
+        System.out.println(studentName);
     }
-
+}

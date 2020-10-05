@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CountCollage {
+public class StudentGarde {
     public static void main(String[] args) {
         Student s1=new Student(1,"gopal","gardi","First Class");
         Student s2=new Student(2,"abhay","gardi","Second Class");
@@ -19,17 +19,22 @@ public class CountCollage {
         document.add(s4);
         document.add(s5);
 
-        Map<String, Integer> map = new HashMap<>();
-            for (Student student : document) {
-                if (map.containsKey(student.getCollege())) {
-                    int num = map.get(student.getCollege());
-                       map.replace(student.getCollege(), ++num);
-                } else {
-                    map.put(student.getCollege(), 1);
-                }
+        Map <String,List<String>> map=new HashMap<>();
+        for (Student student:document)
+        {
+            if (map.containsKey(student.getCollege()))
+            {
 
+                List<String> grade=map.get(student.getCollege());
+                grade.add(student.getGrade());
             }
-        System.out.println(map);
+            else
+            {
+                List<String> grade=new ArrayList<>();
+                grade.add(student.getGrade());
+                map.put(student.getCollege(), grade);
+            }
         }
+        System.out.println(map);
     }
-
+}

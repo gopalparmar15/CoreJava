@@ -2,7 +2,7 @@ package co.prominentpixel;
 
 import java.util.Comparator;
 
-public class Student {
+public class Student implements Comparable {
     private int id;
     private String name;
     private  String college;
@@ -51,10 +51,15 @@ public class Student {
     {
         return id +" "+name+" "+" "+college+" "+grade;
     }
+
+    @Override
+    public int compareTo(Object o) {
+        Student st=(Student)o;
+        return this.getName().compareTo(st.getName());
+    }
 }
 class Name implements Comparator
 {
-
     @Override
     public int compare(Object o, Object o1) {
         Student st1=(Student)o;

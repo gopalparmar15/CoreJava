@@ -1,11 +1,10 @@
 package co.prominentpixel;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
-public class CountCollage {
+public class ShortingName {
     public static void main(String[] args) {
         Student s1=new Student(1,"gopal","gardi","First Class");
         Student s2=new Student(2,"abhay","gardi","Second Class");
@@ -18,18 +17,13 @@ public class CountCollage {
         document.add(s3);
         document.add(s4);
         document.add(s5);
-
-        Map<String, Integer> map = new HashMap<>();
-            for (Student student : document) {
-                if (map.containsKey(student.getCollege())) {
-                    int num = map.get(student.getCollege());
-                       map.replace(student.getCollege(), ++num);
-                } else {
-                    map.put(student.getCollege(), 1);
-                }
-
-            }
-        System.out.println(map);
+        System.out.println(document);
+        //shorting with compareble
+        System.out.println("Sorting with name");
+        Collections.sort(document);
+        for (Student st:document)
+        {
+            System.out.println(st.getId()+" "+st.getName()+" "+st.getCollege()+" "+st.getGrade());
         }
     }
-
+}
