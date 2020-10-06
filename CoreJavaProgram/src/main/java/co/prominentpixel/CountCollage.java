@@ -1,4 +1,4 @@
-package co.prominentpixel;
+package com.prominentpixel;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,7 +23,8 @@ public class CountCollage {
             for (Student student : document) {
                 if (map.containsKey(student.getCollege())) {
                     int num = map.get(student.getCollege());
-                       map.replace(student.getCollege(), ++num);
+                    num=num+1;
+                       map.replace(student.getCollege(), num);
                 } else {
                     map.put(student.getCollege(), 1);
                 }

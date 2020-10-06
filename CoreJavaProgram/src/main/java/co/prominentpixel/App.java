@@ -1,4 +1,4 @@
-package co.prominentpixel;
+package com.prominentpixel;
 
 /**
  * Hello world!

@@ -1,7 +1,6 @@
-package co.prominentpixel;
+package com.prominentpixel;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class StudentList {
     public static void main(String[] args) {

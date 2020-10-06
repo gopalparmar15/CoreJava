@@ -1,4 +1,4 @@
-package co.prominentpixel;
+package com.prominentpixel;
 
 import java.util.*;
 
@@ -19,11 +19,13 @@ public class UniqName {
         document.add(s5);
         System.out.println(document);
         Map<String,Student> object=new HashMap<>();
+       // Map<String,Student> object=new LinkedHashMap<>();
+
         for (Student student:document)
         {
             object.put(student.getName(),student);
         }
-
+       // System.out.println(object);
         System.out.println(object.keySet());
     }
 }

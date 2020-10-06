@@ -1,4 +1,4 @@
-package co.prominentpixel;
+package com.prominentpixel;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
